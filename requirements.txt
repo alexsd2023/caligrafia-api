@@ -1,6 +1,7 @@
 flask==3.0.3
-torch == 2.2.2
-torchvision
+torch==2.1.0+cpu
+torchvision==0.16.0+cpu
+torchaudio==2.1.0+cpu
 pillow==10.4.0
 numpy==2.1.1
 mlflow==2.18.0
