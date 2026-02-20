@@ -82,7 +82,7 @@ class CaligrafiaCRNN(nn.Module):
 
 # 🌟 PREDICTOR OPTIMIZADO
 class CaligrafiaPredictor:
-    def __init__(self, model_path="best_caligrafia_model.pth", num_classes=5):
+    def __init__(self, model_path="best_caligrafia_model.pth", num_classes=7):
         self.device = get_device()
         self.model = CaligrafiaCRNN(num_classes).to(self.device)
         self.model.load_state_dict(torch.load(model_path, map_location=self.device))
