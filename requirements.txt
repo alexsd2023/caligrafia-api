@@ -1,5 +1,5 @@
 flask==3.0.3
-torch
+torch == 2.2.2
 torchvision
 pillow==10.4.0
 numpy==2.1.1
