@@ -8,9 +8,18 @@ import io
 
 app = Flask(__name__)
 
-# Cargar predictor al inicio
-print("🔥 Cargando modelo...")
-predictor = CaligrafiaPredictor("best_caligrafia_model.pth")
+print(" Cargando modelo CRNN...")
+model_path = os.path.join(os.path.dirname(__file__), "best_caligrafia_model.pth")
+
+try:
+    predictor = CaligrafiaPredictor(model_path)
+    print(" Modelo cargado correctamente!")
+    MODEL_LOADED = True
+except Exception as e:
+    print(f" Error carga modelo: {e}")
+    MODEL_LOADED = False
+    predictor = None
+
 print("✅ Modelo listo!")
 
 @app.route('/health', methods=['GET'])
