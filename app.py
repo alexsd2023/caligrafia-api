@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 print(" Cargando modelo CRNN...")
 model_path = os.path.join(os.path.dirname(__file__), "best_caligrafia_model.pth")
-
+print(model_path)
 try:
     predictor = CaligrafiaPredictor(model_path)
     print(" Modelo cargado correctamente!")
